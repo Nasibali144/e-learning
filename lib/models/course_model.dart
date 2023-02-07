@@ -1,5 +1,6 @@
 import 'package:e_learning/models/enums/status.dart';
 import 'package:e_learning/models/teacher_model.dart';
+import 'package:e_learning/services/utils.dart';
 
 import 'modul_model.dart';
 
@@ -26,4 +27,15 @@ class Course {
   }) : id = ++countAllObject,
   price = moduls.fold(0, (previousValue, element) => element.price + previousValue),
   duration = moduls.fold(0, (previousValue, element) => element.duration + previousValue);
+
+  @override
+  String toString() {
+    String result = "Course $name.\n\t$description \n\tCourse price: $price so'm\n\t${Utils.hourToDuration(duration, 4, 20)}";
+    result += "\n\tModuls:";
+    for(final modul in moduls) {
+      result += "\n\t\t$modul";
+    }
+
+    return result;
+  }
 }

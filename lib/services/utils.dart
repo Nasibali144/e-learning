@@ -14,4 +14,24 @@ class Utils {
     uid.shuffle();
     return uid.join();
   }
+
+  static void exit() {
+    print("Thank you for attention! Exit!");
+  }
+
+  static void wrongState(void Function() build) {
+    print("Please enter the number shown!");
+    build();
+  }
+
+  static void space() {
+    print("\n" * 5);
+  }
+
+  static String hourToDuration(int hourTime, int delta, int amount) {
+    int day = hourTime ~/ delta;
+    int month = day ~/ amount;
+
+    return "Duration $hourTime hour in $month month";
+  }
 }

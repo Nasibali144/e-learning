@@ -20,4 +20,10 @@ class Teacher extends User {
     required super.password,
     required super.phone,
   });
+
+
+  @override
+  String toString() {
+    return "Teacher $firstname $lastname. Age: $age. Experience: $experience. Speciality: $courses";
+  }
 }

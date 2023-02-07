@@ -14,4 +14,13 @@ class Modul {
     required this.price,
     required this.duration,
   }) : id = ++countAllObject;
+
+  @override
+  String toString() {
+    String result = "$number. $name.\n";
+    for(final lesson in lessons) {
+      result += "$lesson \n";
+    }
+    return result;
+  }
 }
