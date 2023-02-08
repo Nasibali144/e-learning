@@ -4,8 +4,12 @@ import 'package:e_learning/databases/teachers.dart';
 import 'package:e_learning/models/enums/gender.dart';
 import 'package:e_learning/models/enums/page.dart';
 import 'package:e_learning/models/student_model.dart';
+import 'package:e_learning/models/user_model.dart';
 
 class AuthService {
+
+  static late User user;
+
   static bool signUp({
     required String firstname,
     required String lastname,
@@ -42,23 +46,27 @@ class AuthService {
     }
 
     final student = Student(balance: 0, groups: [], payments: [], firstname: firstname, lastname: lastname, age: age, imageUrl: image, birthdate: birthdate, gender: gender, phone: phone, password: password);
+    user = student;
     students.add(student);
     return true;
   }
 
   static Page signIn({required String phone, required String password}) {
     if(admin.phone == phone && admin.password == password) {
+      user = admin;
       return Page.adminDashboard;
     }
 
     for(int i = 0; i < teachers.length; i++) {
       if(teachers[i].phone == phone && teachers[i].password == password) {
+        user = teachers[i];
         return Page.teacherDashboard;
       }
     }
 
     for(int i = 0; i < students.length; i++) {
       if(students[i].phone == phone && students[i].password == password) {
+        user = students[i];
         return Page.home;
       }
     }
