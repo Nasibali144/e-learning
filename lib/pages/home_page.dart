@@ -2,6 +2,7 @@ import 'package:e_learning/databases/students.dart';
 import 'package:e_learning/databases/teachers.dart';
 import 'package:e_learning/models/student_model.dart';
 import 'package:e_learning/pages/base_page.dart';
+import 'package:e_learning/pages/student_profile_page.dart';
 import 'package:e_learning/services/auth_service.dart';
 import 'package:e_learning/services/balance_service.dart';
 import 'package:e_learning/services/io_service.dart';
@@ -104,7 +105,7 @@ class HomePage extends BaseScreen {
         break;
       case 7:
         {
-          //TODO:My Profile
+          StudentProfile();
         }
         break;
       default:

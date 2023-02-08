@@ -3,6 +3,7 @@ import 'package:e_learning/pages/home_page.dart';
 import 'package:e_learning/pages/intro_page.dart';
 import 'package:e_learning/pages/sign_in_page.dart';
 import 'package:e_learning/pages/sign_up_page.dart';
+import 'package:e_learning/pages/teacher_dashboard.dart';
 
 class NavigateService {
   static void navigation(Page page) {
@@ -12,8 +13,7 @@ class NavigateService {
         print("AdminDashboard");
       } break;
       case Page.teacherDashboard: {
-        // TODO: TeacherDashboard();
-        print("TeacherDashboard");
+        TeacherDashboard();
       } break;
       case Page.home: {
         HomePage();
