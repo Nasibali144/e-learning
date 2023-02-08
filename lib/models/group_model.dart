@@ -14,6 +14,7 @@ class Group {
   String startDate;
   Course course;
   Status status;
+  int? modulNumber;
 
   static int countAllObject = 0;
 

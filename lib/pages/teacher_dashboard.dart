@@ -4,6 +4,7 @@ import 'package:e_learning/models/teacher_model.dart';
 import 'package:e_learning/pages/base_page.dart';
 import 'package:e_learning/pages/courses_page.dart';
 import 'package:e_learning/pages/intro_page.dart';
+import 'package:e_learning/pages/teacher_my_cource_page.dart';
 import 'package:e_learning/pages/teacher_profile_page.dart';
 import 'package:e_learning/services/auth_service.dart';
 import '../../services/io_service.dart';
@@ -33,8 +34,7 @@ class TeacherDashboard extends BaseScreen {
         }
         break;
       case 1:
-        // TODO: my courses page
-        print("The page is preparing!");
+        ShowTeacherCourse();
         break;
       case 2:
         TeacherProfile();

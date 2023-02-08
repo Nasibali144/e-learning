@@ -9,22 +9,25 @@ class ChangeOfTeacher {
     io.console("Image(url):");
     String image = io.text;
     currentTeacher.imageUrl = image;
-    print("in the  successful conversion of the ImageUrl");
+    print("In the  successful conversion of the ImageUrl");
+    print("\n");
     TeacherProfileSetting();
   }
 
   static void changeOfPhone() {
-    print("enter a phone number :");
+    print("Enter a phone number :");
     io.console("+998");
     String phoneNumber = "+998${io.text}";
     if (phoneNumber.length == 13 ||
         phoneNumber.contains(RegExp(r'^\+\d{12}'))) {
       currentTeacher.phone = phoneNumber;
     } else {
-      print("in the not successful conversion of the number");
+      print("In the not successful conversion of the number");
       TeacherProfileSetting();
     }
-    print("in the  successful conversion of the number");
+    print("In the  successful conversion of the number");
+    print("\n");
+
     TeacherProfileSetting();
   }
 
@@ -32,7 +35,9 @@ class ChangeOfTeacher {
     io.console("Enter Firstname: ");
     String firstname = io.text;
     currentTeacher.firstname = firstname;
-    print("in the  successful conversion of the firstname");
+    print("In the  successful conversion of the firstname");
+    print("\n");
+
     TeacherProfileSetting();
   }
 
@@ -40,7 +45,9 @@ class ChangeOfTeacher {
     io.console(" Enter Lastname: ");
     String lastName = io.text;
     currentTeacher.lastname = lastName;
-    print("in the  successful conversion of the lastname");
+    print("In the  successful conversion of the lastname");
+    print("\n");
+
     TeacherProfileSetting();
   }
 
@@ -52,10 +59,12 @@ class ChangeOfTeacher {
     String password2 = io.text;
     if (password1 == password2) {
       currentTeacher.password = password1;
-      print("in the  successful conversion of the password");
+      print("In the  successful conversion of the password");
+      print("\n");
+
       TeacherProfileSetting();
     } else {
-      print("in the  successful conversion of the password");
+      print("In the  successful conversion of the password");
       ChangeOfTeacher.changeOfPassword();
     }
   }
@@ -66,7 +75,9 @@ class ChangeOfStudent {
     io.console("Image(url):");
     String image = io.text;
     currentStudent.imageUrl = image;
-    print("in the  successful conversion of the ImageUrl");
+    print("In the  successful conversion of the ImageUrl");
+    print("\n");
+
     StudentProfileSetting();
   }
 
@@ -74,7 +85,9 @@ class ChangeOfStudent {
     io.console("Enter Firstname: ");
     String firstname = io.text;
     currentStudent.firstname = firstname;
-    print("in the  successful conversion of the firstname");
+    print("In the  successful conversion of the firstname");
+    print("\n");
+
     StudentProfileSetting();
   }
 
@@ -82,7 +95,9 @@ class ChangeOfStudent {
     io.console(" Enter Lastname: ");
     String lastName = io.text;
     currentStudent.lastname = lastName;
-    print("in the  successful conversion of the lastname");
+    print("In the  successful conversion of the lastname");
+    print("\n");
+
     StudentProfileSetting();
   }
 
@@ -94,10 +109,12 @@ class ChangeOfStudent {
     String password2 = io.text;
     if (password1 == password2) {
       currentStudent.password = password1;
-      print("in the  successful conversion of the password");
+      print("In the  successful conversion of the password");
+      print("\n");
+
       StudentProfileSetting();
     } else {
-      print("in the  successful conversion of the password");
+      print("In the  successful conversion of the password");
       ChangeOfStudent.changeOfPassword();
     }
   }

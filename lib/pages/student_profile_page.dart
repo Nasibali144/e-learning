@@ -10,20 +10,18 @@ class StudentProfile extends BaseScreen{
   void build() {
     super.build();
     print("Profile");
-    print("image(url) : ${currentStudent.imageUrl}");
+    print("Image(url) : ${currentStudent.imageUrl}");
     print("Name : ${currentStudent.firstname}");
     print("Surname : ${currentStudent.lastname}");
-    print("phone number: ${currentStudent.phone}");
+    print("Phone number: ${currentStudent.phone}");
     print("\n");
-    print("1.Setting:");
-    print("2.Back:");
+    print("1. Setting");
+    print("2. Back");
     int number=io.number;
     if(number==1){
       StudentProfileSetting();
     }else{
       HomePage();
     }
-
   }
-
 }
