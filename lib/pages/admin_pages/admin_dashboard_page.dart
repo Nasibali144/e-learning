@@ -1,6 +1,8 @@
+import 'package:e_learning/pages/admin_pages/accounting_page.dart';
 import 'package:e_learning/pages/admin_pages/groups/admin_groups_page.dart';
 import 'package:e_learning/pages/base_page.dart';
 import 'package:e_learning/pages/intro_page.dart';
+import 'package:e_learning/services/teachers_service.dart';
 import 'package:e_learning/services/utils.dart';
 
 import '../../services/io_service.dart';
@@ -22,9 +24,13 @@ class AdminDashboardPage extends BaseScreen {
         Utils.exit();
         break;
       case 1:
+        // TeacherService();
         break;
       case 2:
         AdminGroupsPage();
+        break;
+      case 7:
+        Accounting();
         break;
       case 8:
         IntroPage();
