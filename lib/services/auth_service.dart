@@ -4,7 +4,12 @@ import 'package:e_learning/databases/teachers.dart';
 import 'package:e_learning/models/enums/gender.dart';
 import 'package:e_learning/models/enums/page.dart';
 import 'package:e_learning/models/student_model.dart';
+import 'package:e_learning/models/teacher_model.dart';
 import 'package:e_learning/models/user_model.dart';
+import 'package:e_learning/pages/admin_pages/admin_dashboard_page.dart';
+import 'package:e_learning/pages/home_page.dart';
+import 'package:e_learning/pages/intro_page.dart';
+import 'package:e_learning/pages/teacher_dashboard.dart';
 
 class AuthService {
 
@@ -72,5 +77,27 @@ class AuthService {
     }
 
     return Page.signIn;
+  }
+
+  static void logOut(int command, User user){
+    if(user is Student){
+      if(command==1){
+        IntroPage();
+      }else {
+        HomePage();
+      }
+    }else if(user is Teacher){
+      if(command==1){
+        IntroPage();
+      }else {
+        TeacherDashboard();
+      }
+    } else {
+      if(command==1){
+        IntroPage();
+      }else {
+        AdminDashboardPage();
+      }
+    }
   }
 }

@@ -21,12 +21,16 @@ class TeacherDashboard extends BaseScreen {
     print("3. Students");
     print('4. My groups');
     print('5. Courses');
-    print("0. Log Out");
+    print("6. Log Out");
     int choose = io.number;
 
     switch (choose) {
-      case 0:
-        // TODO: Log out
+      case 6:
+        {
+          print('1. Yes\n2. No');
+          int logOutCommand = io.number;
+          AuthService.logOut(logOutCommand, currentTeacher);
+        }
         break;
       case 1:
         // TODO: my courses page

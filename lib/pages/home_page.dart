@@ -23,6 +23,7 @@ class HomePage extends BaseScreen {
     print("5. Teachers");
     print("6. Courses");
     print("7. My Profile");
+    print("8. Log out");
 
     int command = io.number;
 
@@ -106,6 +107,13 @@ class HomePage extends BaseScreen {
       case 7:
         {
           StudentProfile();
+        }
+        break;
+      case 8:
+        {
+          print('1. Yes\n2. No');
+          int logOutCommand = io.number;
+          AuthService.logOut(logOutCommand, currentStudent);
         }
         break;
       default:
