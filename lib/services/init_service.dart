@@ -8,8 +8,10 @@ class InitService {
 
   static _connectStudentToGroup() {
     groupF1.students.addAll(students);
-    for(final student in students) {
-      student.groups.add(groupF1);
-    }
+    // for(final student in students) {
+    //   student.groups.add(groupF1);
+    // }
+
+
   }
 }
