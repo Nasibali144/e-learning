@@ -1,4 +1,4 @@
-class BaseScreen {
+abstract class BaseScreen {
   BaseScreen() {
     build();
   }

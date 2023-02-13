@@ -1,7 +1,7 @@
 import 'package:e_learning/models/enums/gender.dart';
 import 'package:e_learning/services/utils.dart';
 
-class User {
+abstract class User {
   String uid;
   String firstname;
   String lastname;

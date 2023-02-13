@@ -2,9 +2,16 @@ import 'package:e_learning/databases/courses/courses.dart';
 import 'package:e_learning/pages/base_page.dart';
 import 'package:e_learning/services/io_service.dart';
 import 'package:e_learning/services/utils.dart';
-import 'intro_page.dart';
+import '../models/user_model.dart';
+
+
 
 class CoursesPage extends BaseScreen {
+
+  User? user;
+
+  CoursesPage([this.user]);
+
   @override
   void build() {
     super.build();
@@ -19,11 +26,10 @@ class CoursesPage extends BaseScreen {
     if(page == 0) {
       Utils.exit();
     } else if(page == courses.length + 1) {
-      IntroPage();
+      Utils.back(user);
     } else if(page < 0 || page > courses.length + 1) {
       Utils.wrongState(build);
     }
-
     // TODO: CourseDetailPage
   }
 }

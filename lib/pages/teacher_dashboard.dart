@@ -46,7 +46,7 @@ class TeacherDashboard extends BaseScreen {
         getGroup();
         break;
       case 5:
-        CoursesPage();
+        CoursesPage(currentTeacher);
         break;
       default:
         Utils.wrongState(build);

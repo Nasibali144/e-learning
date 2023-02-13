@@ -1,5 +1,15 @@
 import 'dart:math';
 
+import 'package:e_learning/models/user_model.dart';
+
+import '../models/admin_model.dart';
+import '../models/student_model.dart';
+import '../models/teacher_model.dart';
+import '../pages/admin_pages/admin_dashboard_page.dart';
+import '../pages/home_page.dart';
+import '../pages/intro_page.dart';
+import '../pages/teacher_dashboard.dart';
+
 class Utils {
   static String generateUID() {
     List<String> uid = [];
@@ -17,6 +27,18 @@ class Utils {
 
   static void exit() {
     print("Thank you for attention! Exit!");
+  }
+
+  static void back([User? user]){
+    if(user is Student){
+      HomePage();
+    }else if(user is Teacher){
+      TeacherDashboard();
+    }else if(user is Admin){
+      AdminDashboardPage();
+    }else{
+      IntroPage();
+    }
   }
 
   static void wrongState(void Function() build) {
