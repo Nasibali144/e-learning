@@ -1,5 +1,6 @@
 import 'package:e_learning/databases/admin.dart';
 import 'package:e_learning/pages/admin_pages/accounting_page.dart';
+import 'package:e_learning/pages/admin_pages/admin_student_page.dart';
 import 'package:e_learning/pages/admin_pages/groups/admin_groups_page.dart';
 import 'package:e_learning/pages/base_page.dart';
 import 'package:e_learning/pages/intro_page.dart';
@@ -30,6 +31,10 @@ class AdminDashboardPage extends BaseScreen {
         break;
       case 2:
         AdminGroupsPage();
+        break;
+      case 3:
+        // TODO bug fix: Asror
+        // AdminStudentsPage();
         break;
       case 7:
         Accounting();

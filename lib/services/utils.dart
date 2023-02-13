@@ -1,7 +1,5 @@
 import 'dart:math';
-
 import 'package:e_learning/models/user_model.dart';
-
 import '../models/admin_model.dart';
 import '../models/student_model.dart';
 import '../models/teacher_model.dart';
