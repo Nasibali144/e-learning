@@ -1,10 +1,11 @@
+import 'package:e_learning/databases/payments.dart';
 import 'package:e_learning/models/enums/gender.dart';
 import 'package:e_learning/models/student_model.dart';
 
 final student1 = Student(
     balance: 1000000,
     groups: [],
-    payments: [],
+    payments: [pay1],
     firstname: "Eshmat",
     lastname: "Toshmatov",
     age: 18,
@@ -17,7 +18,7 @@ final student1 = Student(
 final student2 = Student(
     balance: 1000000,
     groups: [],
-    payments: [],
+    payments: [pay2],
     firstname: "Toshmat",
     lastname: "Eshmatov",
     age: 18,

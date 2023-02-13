@@ -24,8 +24,9 @@ class Group {
     required this.students,
     required this.teacher,
     required this.course,
+    this.status = Status.inProgress,
   })  : id = ++countAllObject,
         createdAt = DateTime.now().toString(),
-        studentCount = students.length,
-        status = Status.inProgress;
+        studentCount = students.length;
+        // status = Status.inProgress;
 }

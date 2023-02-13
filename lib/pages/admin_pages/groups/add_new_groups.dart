@@ -10,35 +10,42 @@ import 'package:e_learning/pages/intro_page.dart';
 import 'package:e_learning/services/io_service.dart';
 import 'package:e_learning/services/utils.dart';
 
-List<Student> student = [];
-
 class AddNewGroups {
   AddNewGroups() {
+    List<Student> student = [];
+
     print('Enter group name:');
     String groupName = io.text;
-
-    void studentsData() {
-      print('Choose Students from database:');
-      for (int i = 0; i < students.length; i++) {
-        print('\t$i. ${students[i].firstname}  ${students[i].lastname}');
-      }
-      int groupStudents = io.number;
-      student.add(students[groupStudents]);
+    if (students.isEmpty) {
+      print('There are not enough people left in the database!');
     }
-
-    studentsData();
-
-    void newStudent() {
-      print('0. Add new student');
-      print('1. Continue');
-      int number = io.number;
-      if (number == 0) {
-        studentsData();
-        newStudent();
+    else {
+      void studentsData() {
+        print('Choose students from database:');
+        for (int i = 0; i < students.length; i++) {
+          print('\t$i. ${students[i].firstname}  ${students[i].lastname}');
+        }
+        int groupStudents = io.number;
+        student.add(students[groupStudents]);
+        students.remove(students[groupStudents]);
       }
-    }
 
-    newStudent();
+      void newStudent() {
+        if (students.isNotEmpty) {
+          print('\n0. Add new student');
+        } else {
+          print('There are not enough people left in the database!');
+        }
+        print('1. Continue');
+        int number = io.number;
+        if (number == 0) {
+          studentsData();
+          newStudent();
+        }
+      }
+
+      newStudent();
+    }
 
     print('Choose group teacher:');
     for (int i = 0; i < teachers.length; i++) {
@@ -61,16 +68,15 @@ class AddNewGroups {
       teacher: teacher,
       course: course,
     );
+
     print('Choose group status:\n\t0. Waiting Group\n\t1. In Process Groups');
     int groupStatus = io.number;
     group.status = groupStatus == 1 ? Status.inProgress : Status.upComing;
     groups.add(group);
 
-
-
     print('0. Exit');
-    print('1. Back To Admin Groups Page');
-    print('2. Back Intro Page\n');
+    print('1. Admin Groups Page');
+    print('2. Log Out\n');
     int page = io.number;
     if (page == 0) {
       Utils.exit();

@@ -41,11 +41,9 @@ class TeacherDashboard extends BaseScreen {
         TeacherProfile();
         break;
       case 3:
-        // TODO: bug fix: Saidjon aka
         StudentInfo();
         break;
       case 4:
-      // TODO: bug fix: Diyorjon
         PrintGroup();
         break;
       case 5:

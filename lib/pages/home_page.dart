@@ -3,6 +3,7 @@ import 'package:e_learning/databases/teachers.dart';
 import 'package:e_learning/models/student_model.dart';
 import 'package:e_learning/pages/base_page.dart';
 import 'package:e_learning/pages/courses_page.dart';
+import 'package:e_learning/pages/payment_page.dart';
 import 'package:e_learning/pages/student_profile_page.dart';
 import 'package:e_learning/services/auth_service.dart';
 import 'package:e_learning/services/balance_service.dart';
@@ -19,7 +20,7 @@ class HomePage extends BaseScreen {
     print("Home Page!");
     print("1. My Course");
     print("2. Balance");
-    print("3. Payment History");
+    print("3. Payment");
     print("4. My Group");
     print("5. Teachers");
     print("6. Courses");
@@ -56,7 +57,7 @@ class HomePage extends BaseScreen {
         break;
       case 3:
         {
-          //TODO:Payment History
+          PaymentPage();
         }
         break;
       case 4:
