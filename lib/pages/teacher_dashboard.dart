@@ -4,6 +4,7 @@ import 'package:e_learning/models/teacher_model.dart';
 import 'package:e_learning/pages/base_page.dart';
 import 'package:e_learning/pages/courses_page.dart';
 import 'package:e_learning/pages/intro_page.dart';
+import 'package:e_learning/pages/teacher_group_student_page.dart';
 import 'package:e_learning/pages/teacher_my_cource_page.dart';
 import 'package:e_learning/pages/teacher_profile_page.dart';
 import 'package:e_learning/services/auth_service.dart';
@@ -40,55 +41,18 @@ class TeacherDashboard extends BaseScreen {
         TeacherProfile();
         break;
       case 3:
-        printStudent();
+        // TODO: bug fix: Saidjon aka
+        StudentInfo();
         break;
       case 4:
-        getGroup();
+      // TODO: bug fix: Diyorjon
+        PrintGroup();
         break;
       case 5:
         CoursesPage(currentTeacher);
         break;
       default:
         Utils.wrongState(build);
-    }
-  }
-
-  void printStudent() {
-    for (final i in groups) {
-      if (i.teacher.uid == currentTeacher.uid) {
-        print('This is ${i.name}');
-        for (var q in i.students) {
-          print('${q.firstname} ${q.lastname}');
-        }
-      }
-    }
-    print("0.Back");
-    print("99.Exit");
-    int choose = io.number;
-    if (choose == 0) {
-      TeacherDashboard();
-    } else if (choose == 99) {
-      Utils.exit();
-    } else {
-      TeacherDashboard();
-    }
-  }
-
-  void getGroup() {
-    for (final i in groups) {
-      if (i.teacher.uid == currentTeacher.uid) {
-        print(i.name);
-      }
-    }
-    print("0.Back");
-    print("99.Exit");
-    int choose = io.number;
-    if (choose == 0) {
-      TeacherDashboard();
-    } else if (choose == 99) {
-      Utils.exit();
-    } else {
-      TeacherDashboard();
     }
   }
 }
