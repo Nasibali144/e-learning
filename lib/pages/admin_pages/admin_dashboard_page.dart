@@ -2,10 +2,9 @@ import 'package:e_learning/databases/admin.dart';
 import 'package:e_learning/pages/admin_pages/accounting_page.dart';
 import 'package:e_learning/pages/admin_pages/admin_student_page.dart';
 import 'package:e_learning/pages/admin_pages/groups/admin_groups_page.dart';
+import 'package:e_learning/pages/admin_pages/groups/teacher_page_admin.dart';
 import 'package:e_learning/pages/base_page.dart';
-import 'package:e_learning/pages/intro_page.dart';
 import 'package:e_learning/services/auth_service.dart';
-import 'package:e_learning/services/teachers_service.dart';
 import 'package:e_learning/services/utils.dart';
 
 import '../../services/io_service.dart';
@@ -27,14 +26,13 @@ class AdminDashboardPage extends BaseScreen {
         Utils.exit();
         break;
       case 1:
-        // TeacherService();
+        TeachersPageAdmin();
         break;
       case 2:
         AdminGroupsPage();
         break;
       case 3:
-        // TODO bug fix: Asror
-        // AdminStudentsPage();
+        AdminStudentsPage();
         break;
       case 7:
         Accounting();
